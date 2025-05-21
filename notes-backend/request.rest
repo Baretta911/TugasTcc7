@@ -1,0 +1,102 @@
+### 🔐 Variabel token (ganti setelah login)
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJxIiwiZW1haWwiOiJxQGdtYS5jbyIsInRhbmdnYWxfZGlidWF0IjoiMjAyNS0wNS0yMVQwNzozNzo1Ni4wMDBaIiwidGFuZ2dhbF9kaXBlcmJhcnVpIjoiMjAyNS0wNS0yMVQwODozMjowMi4wMDBaIiwiaWF0IjoxNzQ3ODE2ODM5LCJleHAiOjE3NDc4MTg2Mzl9.Z22C6KVDQefNGsLlleTzSsublpIQI5VlXe5QbONxTrQ
+### ====================================
+### 👥 USER ROUTES
+### ====================================
+
+### 👥 Get All Users
+GET http://localhost:8080/users
+Content-Type: application/json
+
+###
+
+### 👤 Get User by ID
+GET http://localhost:8080/users/1
+Content-Type: application/json
+
+###
+
+### ➕ Create User (Register)
+POST http://localhost:8080/create-users
+Content-Type: application/json
+
+{
+  "username": "hafizh",
+  "email": "hafizh@example.com",
+  "password": "123456"
+}
+
+###
+
+### ✏️ Update User
+PUT http://localhost:8080/update-users/1
+Content-Type: application/json
+
+{
+  "username": "hafizh_akbar",
+  "email": "hafizh_updated@example.com",
+  "password": "newpassword123"
+}
+
+###
+
+### ❌ Delete User
+DELETE http://localhost:8080/delete-users/1
+Content-Type: application/json
+
+###
+
+### 🔑 Login User
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "q",
+  "password": "123"
+}
+
+###
+
+### 🚪 Logout User (pakai verifyToken)
+POST http://localhost:8080/logout
+Authorization: {{token}}
+
+###
+
+### ====================================
+### 📌 NOTES ROUTES (semua butuh token)
+### ====================================
+
+### 🔍 Get All Notes
+GET http://localhost:8080/notes
+Authorization: {{token}}
+
+###
+
+### 🆕 Create Note
+POST http://localhost:8080/notes
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "title": "Note 1",
+  "content": "Content terkeren abad ini"
+}
+
+###
+
+### ✏️ Update Note
+PUT http://localhost:8080/notes/1
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "title": "Machine Legend",
+  "content": "Lorem ipsum dolor sit amet..."
+}
+
+###
+
+### ❌ Delete Note
+DELETE http://localhost:8080/delete-notes/4
+Authorization: {{token}}
