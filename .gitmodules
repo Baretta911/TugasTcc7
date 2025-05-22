@@ -1,0 +1,3 @@
+[submodule "notes-frontend"]
+	path = notes-frontend
+	url = https://github.com/Baretta911/notes-frontend.git
