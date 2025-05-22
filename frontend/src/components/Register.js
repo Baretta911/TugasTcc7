@@ -34,7 +34,7 @@ const RegisterForm = () => {
       });
       setSuccessMessage(response.data.msg || "Register successful!");
       setTimeout(() => {
-        navigate("/login");
+        navigate("/Login");
       }, 1000);
     } catch (error) {
       setErrorMessage(
@@ -158,7 +158,7 @@ const RegisterForm = () => {
         <div style={{ textAlign: "center", marginTop: "20px" }}>
           <p>
             Already have an account?{" "}
-            <Link to="/login" className="login-link" style={styles.link}>
+            <Link to="/Login" className="Login-link" style={styles.link}>
               Login here
             </Link>
           </p>
