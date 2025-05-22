@@ -16,7 +16,7 @@ const LoginForm = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(`${BASE_URL}/login`, {
+      const response = await axios.post(`${BASE_URL}/Login`, {
         username,
         password,
       });
@@ -118,7 +118,7 @@ const LoginForm = () => {
         <div style={{ textAlign: "center", marginTop: "20px" }}>
           <p>
             Don't have an account?{" "}
-            <Link to="/register" className="register-link" style={styles.link}>
+            <Link to="/Register" className="Register-link" style={styles.link}>
               Register here
             </Link>
           </p>
