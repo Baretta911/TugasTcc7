@@ -4,7 +4,7 @@ import cors from "cors";
 import sequelize from "./config/database.js";
 import notesRoutes from "./routes/notesRoutes.js";
 import {verifyToken} from "./middleware/verifyToken.js";
-import userRoutes from "./routes/UserRoutes.js"
+import userRoutes from "./routes/userRoutes.js"
 
 const app = express();
 const PORT = process.env.PORT || 8080;
