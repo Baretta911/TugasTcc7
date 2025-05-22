@@ -14,7 +14,7 @@ steps:
       [
         "run",
         "deploy",
-        "be",  # Nama service Cloud Run
+        "be-barettap",  # Nama service Cloud Run
         "--image",
         "gcr.io/$PROJECT_ID/be-barettap",
         "--region",
