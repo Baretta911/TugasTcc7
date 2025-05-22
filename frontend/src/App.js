@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import NoteList from "./components/NoteList";
 import LoginForm from "./components/Login";
-import RegisterForm from "./components/register";
+import RegisterForm from "./components/Register";
 import { BASE_URL } from "./utils";
 
 function App() {
