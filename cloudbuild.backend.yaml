@@ -1,12 +1,12 @@
 steps:
   # Step 1: Build Docker image dari folder backend
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/be-Baretta", "."]
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/be-barettap", "."]
     dir: "notes-backend"  # Ganti jika folder kamu berbeda
 
   # Step 2: Push Docker image ke Artifact Registry
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/be-Baretta"]
+    args: ["push", "gcr.io/$PROJECT_ID/be-barettap"]
 
   # Step 3: Deploy image ke Cloud Run
   - name: "gcr.io/cloud-builders/gcloud"
@@ -16,7 +16,7 @@ steps:
         "deploy",
         "be",  # Nama service Cloud Run
         "--image",
-        "gcr.io/$PROJECT_ID/be-Baretta",
+        "gcr.io/$PROJECT_ID/be-barettap",
         "--region",
         "us-central1",
         "--platform",
