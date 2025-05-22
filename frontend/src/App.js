@@ -15,21 +15,21 @@ function App() {
     setIsAuthenticated(!!token);
   }, []);
 
-  // Fungsi untuk register
+  // Fungsi untuk Register
   const handleRegister = async (data) => {
     try {
       const response = await axios.post(`${BASE_URL}/create-users`, data);
       alert(response.data.msg);
-      window.location.href = "/login";
+      window.location.href = "/Login";
     } catch (error) {
       alert("Gagal Register. Pastikan semua data benar.");
     }
   };
 
-  // Fungsi untuk login
+  // Fungsi untuk Login
   const handleLogin = async (data) => {
     try {
-      const response = await axios.post(`${BASE_URL}/login`, data, {
+      const response = await axios.post(`${BASE_URL}/Login`, data, {
         withCredentials: true,
       });
       localStorage.setItem("accessToken", response.data.accessToken);
@@ -47,7 +47,7 @@ function App() {
 
   // Fungsi ProtectedRoute
   const ProtectedRoute = ({ children }) => {
-    return isAuthenticated ? children : <Navigate to="/login" />;
+    return isAuthenticated ? children : <Navigate to="/Login" />;
   };
 
   return (
@@ -67,11 +67,11 @@ function App() {
           }
         />
         <Route
-          path="/login"
+          path="/Login"
           element={<LoginForm handleLogin={handleLogin} />}
         />
         <Route
-          path="/register"
+          path="/Register"
           element={<RegisterForm handleRegister={handleRegister} />}
         />
       </Routes>
